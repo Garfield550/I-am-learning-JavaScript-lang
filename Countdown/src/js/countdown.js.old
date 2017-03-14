@@ -1,0 +1,43 @@
+// 设置时间是 2018/01/01.
+const dateTime = new Date('01/01/2018');
+// 定义变量
+var days, hours, minutes, seconds;
+
+window.onload = countdown();
+
+// 创建时间计算函数
+function calTime() {
+    // 获取当前时间
+    var nowTime = new Date().getTime();
+    // 计算剩余毫秒
+    var date = dateTime.getTime() - nowTime;
+    // 计算所有秒
+    seconds = date / (1000);
+    // 计算所有分钟
+    minutes = seconds / 60;
+    // 计算所有小时
+    hours = minutes / 60;
+    // 计算所有天
+    days = hours / 24;
+}
+// 格式化时间，取余并向下取整
+function formatTime(times, remainder) {
+    return Math.floor(times % remainder);
+}
+// 倒计时
+function countdown() {
+    // 计算时间
+    calTime();
+    // 格式化时间并赋值到变量
+    var rSeconds = formatTime(seconds, 60);
+    var rMinutes = formatTime(minutes, 60);
+    var rHour = formatTime(hours, 24);
+    var rDays = Math.floor(days);
+    // DOM 写结果
+    document.getElementById("day").innerHTML = rDays;
+    document.getElementById("hour").innerHTML = rHour;
+    document.getElementById("minute").innerHTML = rMinutes;
+    document.getElementById("second").innerHTML = rSeconds;
+    // 循环
+    setTimeout(countdown, 500);
+}
