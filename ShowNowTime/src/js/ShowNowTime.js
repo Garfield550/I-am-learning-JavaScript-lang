@@ -1,6 +1,6 @@
 module.exports =  function () {
     // 定时, 每 1 秒更新一次时间
-    setInterval(() => {
+    return setInterval(() => {
         // 显示时间
         document.getElementById("now-time").innerText = nowTime();
     }, 1000);
