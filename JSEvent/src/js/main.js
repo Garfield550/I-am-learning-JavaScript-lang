@@ -1,5 +1,6 @@
 import 'normalize.css';
 import '../scss/main.scss';
+import {draw as drawBall} from './modules/ball';
 
 // 获取 Canvas
 let canvas = document.getElementById("jump-ball");
@@ -7,65 +8,51 @@ let canvas = document.getElementById("jump-ball");
 if (canvas.getContext) {
     // 2D 内容
     let context = canvas.getContext("2d");
+    // 球的属性
+    let _x = 30;
+    let _y = 30;
+    let _vx = 2;
+    let _vy = 4;
+    let _radius = 30;
+    let _color = "#767676";
     // requestAnimationFrame
     let raf;
-    // 定义球类
-    let ball = {
-        // 球的属性
-        _x: 30,
-        _y: 30,
-        _vx: 2,
-        _vy: 4,
-        _radius: 30,
-        _color: "#767676",
-        _startAngle: 0,
-        _endAngle: Math.PI * 2,
-        // 球的 draw 方法
-        draw: function () {
-            let circle = new Path2D();
-            // 填充色
-            context.fillStyle = ball._color;
-            // 画个圆
-            circle.arc(ball._x, ball._y, ball._radius, ball._startAngle, ball._endAngle);
-            // 填充到内容里
-            context.fill(circle);
-        }
-    }
+
     // 定义动画
-    function draw() {
+    function drawAnimation() {
         // 清理 Canvas
         context.clearRect(0, 0, canvas.width, canvas.height);
         // 画个球
-        ball.draw();
+        drawBall(context, _x, _y, _radius, _color);
         // 球的当前位置
-        let _ballXTop = ball._x - ball._radius + ball._vx;
-        let _ballYTop = ball._y - ball._radius + ball._vy;
-        let _ballXBottom = ball._x + ball._radius + ball._vx;
-        let _ballYBottom = ball._y + ball._radius + ball._vy;
+        let _ballXTop = _x - _radius + _vx;
+        let _ballYTop = _y - _radius + _vy;
+        let _ballXBottom = _x + _radius + _vx;
+        let _ballYBottom = _y + _radius + _vy;
         // 球碰到 Canvas 的左右侧弹回
         if (_ballXBottom > canvas.width || _ballXTop < 0) {
-            ball._vx = -ball._vx;
+            _vx = -_vx;
         }
         // 球碰到 Canvas 的上下侧弹回
         if (_ballYBottom > canvas.height || _ballYTop < 0) {
-            ball._vy = -ball._vy;
+            _vy = -_vy;
         }
         // 球的移动
-        ball._x += ball._vx;
-        ball._y += ball._vy;
+        _x += _vx;
+        _y += _vy;
         // requestAnimationFrame
-        raf = window.requestAnimationFrame(draw);
+        raf = window.requestAnimationFrame(drawAnimation);
     }
     // 添加鼠标移入事件监听
     canvas.addEventListener('mouseover', function (e) {
-        raf = window.requestAnimationFrame(draw);
+        raf = window.requestAnimationFrame(drawAnimation);
     });
     // 添加鼠标移出事件监听
     canvas.addEventListener("mouseout", function (e) {
         window.cancelAnimationFrame(raf);
     });
     // 初始化球
-    ball.draw();
+    drawBall(context, _x, _y, _radius, _color);
 } else {
     console.log("Your broswer not support canvas!");
 }
