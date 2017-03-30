@@ -1,6 +1,6 @@
 import 'normalize.css';
 import '../scss/main.scss';
-import {draw as drawBall} from './modules/ball';
+import {draw as drawBall} from './modules/circle';
 
 // 获取 Canvas
 let canvas = document.getElementById("jump-ball");
@@ -9,12 +9,16 @@ if (canvas.getContext) {
     // 2D 内容
     let context = canvas.getContext("2d");
     // 球的属性
-    let _x = 30;
-    let _y = 30;
+    let ball = {
+        x: 30,
+        y: 30,
+        radius: 30,
+        color: "#767676",
+        startAngle: 0,
+        endAngle: Math.PI * 2
+    }
     let _vx = 2;
     let _vy = 4;
-    let _radius = 30;
-    let _color = "#767676";
     // requestAnimationFrame
     let raf;
 
@@ -23,12 +27,12 @@ if (canvas.getContext) {
         // 清理 Canvas
         context.clearRect(0, 0, canvas.width, canvas.height);
         // 画个球
-        drawBall(context, _x, _y, _radius, _color);
+        drawBall(context, ball);
         // 球的当前位置
-        let _ballXTop = _x - _radius + _vx;
-        let _ballYTop = _y - _radius + _vy;
-        let _ballXBottom = _x + _radius + _vx;
-        let _ballYBottom = _y + _radius + _vy;
+        let _ballXTop = ball.x - ball.radius + _vx;
+        let _ballYTop = ball.y - ball.radius + _vy;
+        let _ballXBottom = ball.x + ball.radius + _vx;
+        let _ballYBottom = ball.y + ball.radius + _vy;
         // 球碰到 Canvas 的左右侧弹回
         if (_ballXBottom > canvas.width || _ballXTop < 0) {
             _vx = -_vx;
@@ -38,8 +42,8 @@ if (canvas.getContext) {
             _vy = -_vy;
         }
         // 球的移动
-        _x += _vx;
-        _y += _vy;
+        ball.x += _vx;
+        ball.y += _vy;
         // requestAnimationFrame
         raf = window.requestAnimationFrame(drawAnimation);
     }
@@ -52,7 +56,7 @@ if (canvas.getContext) {
         window.cancelAnimationFrame(raf);
     });
     // 初始化球
-    drawBall(context, _x, _y, _radius, _color);
+    drawBall(context, ball);
 } else {
     console.log("Your broswer not support canvas!");
 }
