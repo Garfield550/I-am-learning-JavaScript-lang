@@ -31,3 +31,6 @@ node_modules
 
 # Visual Studio Code
 .vscode
+
+# Don't ignored files or directory
+!JSSlider/dist
