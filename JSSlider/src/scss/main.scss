@@ -1,0 +1,25 @@
+.slider {
+    max-width: 640px;
+}
+.slider li {
+    display: none;
+}
+.dots {
+    text-align: center;
+    position:relative;
+    top: -64px;
+}
+.dots li {
+    border-radius: 50%;
+    background-color: #EFEFEF;
+    display: inline-block;
+    margin-left: 8px;
+}
+.dot-normal {
+    width: 20px;
+    height: 20px;
+}
+.dot-active {
+    width: 24px;
+    height: 24px;
+}
