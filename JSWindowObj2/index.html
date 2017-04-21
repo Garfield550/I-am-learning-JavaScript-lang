@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Window Object Demo 2</title>
+</head>
+<body>
+    <div>
+        <form id="login" method="post">
+            <label for="username">Username:<input type="text" name="username" id="username"></label>
+            <label for="password">Password:<input type="password" name="password" id="password"></label>
+            <button type="button" onclick="tryLogin();">Login</button>
+        </form>
+    </div>
+    <script>
+        // let loginObj = document.getElementById('login');
+        // let checkUsername = function(_username) {
+        //     if (_username.length < 1) {
+        //         alert('用户名不能为空!');
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // }
+        // let checkPassword = function(_password) {
+        //     if(_password != 'p@sSw0rd') {
+        //         alert('密码错误!');
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // }
+        // let tryLogin = function(object) {
+        //     console.log(object);
+        //     let link = '<a href="https://www.baidu.com">请点击这里</a>';
+        //     if(checkUsername(object.username.value) && checkPassword(object.password.value)) { 
+        //         window.open().document.write('欢迎光临, ' + object.username + link); 
+        //     }
+        // }
+        let tryLogin = function() {
+            let _check = true;
+            let _link = '<a href="https://www.baidu.com">请点击这里</a>';
+            let _login = document.getElementById('login');
+            let _username = _login.username.value;
+            let _password = _login.password.value;
+
+            if(_username.length < 1){
+                alert('用户名不能为空!');
+                _check = false;
+            }
+            if(_password != 'p@sSw0rd') {
+                alert('密码错误!');
+                _check = false;
+            }
+            if(_check === true) {
+                window.open().document.write('欢迎光临, ' + _username + ', ' + link); 
+            }
+        }
+    </script>
+</body>
+</html>
