@@ -13,10 +13,11 @@
 		<script type="text/javascript">
 		function checkAll(checked)
 		{
-		   var allCheckBoxs=document.getElementsByName("isOk") ;
-		   for (var i = 0; i < allCheckBoxs.length; i++)
-		   {
-		       //补全代码
+		   var allCheckBoxs = document.getElementsByName("isOk") ;
+		   for (var i = 0; i < allCheckBoxs.length; i++) {
+		    if(allCheckBoxs[i].type == 'checkbox') {
+					!allCheckBoxs[i].checked ? allCheckBoxs[i].checked = true : allCheckBoxs[i].checked = false;
+				}
 		   }  
 		}
 		</script>
