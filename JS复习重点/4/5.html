@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function selectAll() 
+			{
+				var allCheckBoxs=document.getElementsByName("coffee");
+				var desc=document.getElementById("btn").value; 
+				if (desc=="全喜欢") 
+				{
+					document.getElementById("btn").value = "都不喜欢";
+					for(var i=0;i<allCheckBoxs.length;i++)
+					{
+						allCheckBoxs[i].checked = true;
+					}
+				} 
+				else {
+						document.getElementById("btn").value = "全喜欢";
+						for (var i = 0; i < allCheckBoxs.length; i++) 
+						{
+							allCheckBoxs[i].checked = false;
+						}
+					}
+			}
+		</script>
+	</head>
+	<body>
+		<P>你喜欢喝哪种类型咖啡</P>
+		<form>
+			<br>
+			<input type="checkbox" name="coffee" value="cream">蓝山咖啡
+			<br />
+			<input type="checkbox" name="coffee" value="sugar">摩卡
+			<br />
+			<input type="checkbox" name="coffee" value="sugar">拿铁
+			<br />
+			<input type="checkbox" name="coffee" value="sugar">卡布其诺
+			<br />
+			<input type="checkbox" name="coffee" value="sugar">爱尔兰咖啡
+			<br />
+			<input id="btn" type="button" onClick="selectAll()" value="全喜欢">
+		</form>
+	</body>
+</html>

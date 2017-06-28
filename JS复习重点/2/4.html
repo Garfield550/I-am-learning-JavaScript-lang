@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>		
+		<style type="text/css">
+		table
+		{ 
+		   font-size:12px; 
+		   line-height:20px;
+		}
+		</style>
+		<script type="text/javascript">
+		function checkAll(checked)
+		{
+		   var allCheckBoxs=document.getElementsByName("isOk") ;
+		   for (var i = 0; i < allCheckBoxs.length; i++)
+		   {
+		       //补全代码
+		   }  
+		}
+		</script>
+	</head>
+	<body>
+	<form action="" name="buyForm" method="post">
+		<center>
+			<table width="479">
+				<tr>
+					<td height="41" colspan="3" align="center" style="background-color:#6699CC; font-weight:bold; font-size:20px; color:#FFFFFF">请选择您认为合理的天气生活指数说明</td>
+				</tr>
+				<tr>
+					<td width="83" align="center">
+						<input name="selectall" type="checkbox" id="selectall" onClick="checkAll(this.checked)">
+						<font size="-1">全选/取消</font>
+					</td>
+					<td width="104" align="center"><b>天气</b></td>
+					<td width="276" align="center"><b>说明</b></td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">
+						<HR noshade="noshade" style="border:1px  #CCCCCC dashed " />
+					</td>
+				</tr>
+				<tr>
+					<td height="95" align="center">
+						<input name="isOk" type="checkbox" id="isOk" value="sanguo">
+					</td>
+					<td align="center"><img src="images/ct1.gif"></td>
+					<td width="276" align="left">天气炎热，建议着短衫、短裙、短裤、薄型T恤衫、敞领短袖棉衫等清凉夏季服装。</td>
+				</tr>
+				<tr>
+					<td colspan="23" align="center">
+						<hr noshade="noshade" style="border:1px  #CCCCCC dashed " />
+					</td>
+
+				</tr>
+				<tr>
+					<td align="center">
+						<input name="isOk" type="checkbox" id="isOk" value="paozhu">
+					</td>
+					<td align="center"><img src="images/gj1.gif"></td>
+					<td width="276" align="left">天气较好，在这种天气里去逛街，既可畅快地放松身心，又会有很多意外收获，真是无比惬意。</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">
+						<hr noshade="noshade" style="border:1px  #CCCCCC dashed " />
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input name="isOk" type="checkbox" id="isOk" value="paozhu">
+					</td>
+					<td align="center"><img src="images/gm1.gif"></td>
+					<td width="276" align="left">各项气象条件适宜，发生感冒机率较低。但请避免长期处于空调房间中，以防感冒。</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">
+						<hr noshade="noshade" style="border:1px  #CCCCCC dashed " />
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input name="isOk" type="checkbox" id="isOk" value="jingwu">
+					</td>
+					<td align="center"><img src="images/ls1.gif"></td>
+					<td width="276" align="left">天气不错，极适宜晾晒。抓紧时机把久未见阳光的衣物搬出来晒晒太阳吧！</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center">
+						<hr noshade="noshade" style="border:1px  #CCCCCC dashed " />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"></td>
+				</tr>
+			</table>
+		</center>
+	</form>
+	</body>
+
+</html>

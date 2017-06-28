@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>HTML教程1</h3>
+		<hr  />
+		<h3>HTML教程2</h3>
+		<hr  />
+		<h3>HTML教程3</h3>
+		<hr  />
+		<h3>HTML教程4</h3>
+		<hr  />
+		<h3>HTML教程5</h3>
+		<hr  />
+		<h3>HTML教程6</h3>
+		<hr  />
+		<button id="btn1">删除所有水平线</button>
+		<script type="text/javascript">
+			btn1.onclick=function(){
+				var hrs=document.getElementsByTagName("hr");
+				for(var i=hrs.length-1;i>=0;i--){
+					hrs[i].parentNode.removeChild(hrs[i]);
+				}
+			}
+		</script>
+	</body>
+</html>

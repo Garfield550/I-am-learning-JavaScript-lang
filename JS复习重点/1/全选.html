@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+		function selectAll() {
+		  var box = document.getElementsByName('logo');
+			for(var i = 0; i < box.length; i++) {
+				if(box[i].type == 'checkbox') {
+					!box[i].checked ? box[i].checked = true : box[i].checked = false;
+				}
+			}
+		}
+		</script>
+	</head>
+	<body>
+	<form>
+		<table width="570" border="1">
+			<tr>
+				<td colspan="4" align="center">
+					<h3>世界顶级跑车你认识几款</h3>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" align="center">
+					<input id="car" type="checkbox" name="car" onClick="selectAll()">
+					  我是超级车迷，全部都认识
+				</td>
+			</tr>
+			<tr>
+				<td width="86" align="center">
+					<input type="checkbox" name="logo">
+				</td>
+				<td width="178" align="center">
+					<img src="images/frali.jpg">
+				</td>
+				<td width="78" align="center">
+					<input type="checkbox" name="logo">
+				</td>
+				<td width="208" align="center">
+					<img src="images/skoda.jpg">
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="checkbox" name="logo">
+				</td>
+				<td align="center">
+					<img src="images/binli.jpg">
+				</td>
+				<td align="center">
+					<input type="checkbox" name="logo">
+				</td>
+				<td align="center">
+					<img src="images/lamborghini.jpg">
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="checkbox" name="logo">
+				</td>
+				<td align="center">
+					<img src="images/porsche.jpg">
+				</td>
+				<td align="center">
+					<input type="checkbox" name="logo">
+				</td>
+				<td align="center">
+					<img src="images/alefromeo.jpg">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
